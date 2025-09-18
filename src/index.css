@@ -2,41 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Romantic Love Theme Design System - All colors in HSL */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Romantic Background Gradients */
+    --background: 345 100% 97%;
+    --foreground: 345 15% 20%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card and Surface Colors */
+    --card: 345 100% 98%;
+    --card-foreground: 345 15% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 345 100% 98%;
+    --popover-foreground: 345 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Love Colors */
+    --primary: 345 85% 58%;
+    --primary-foreground: 345 100% 98%;
+    --primary-glow: 345 100% 70%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary Romantic Colors */
+    --secondary: 315 100% 92%;
+    --secondary-foreground: 345 25% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Romantic Tones */
+    --muted: 345 50% 95%;
+    --muted-foreground: 345 12% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent Colors */
+    --accent: 315 100% 85%;
+    --accent-foreground: 345 25% 20%;
+
+    /* Romantic Gradients */
+    --gradient-love: linear-gradient(135deg, hsl(345, 85%, 58%), hsl(315, 100%, 70%));
+    --gradient-heart: linear-gradient(45deg, hsl(345, 85%, 65%), hsl(0, 100%, 75%));
+    --gradient-soft: linear-gradient(180deg, hsl(345, 100%, 97%), hsl(315, 100%, 95%));
+
+    /* Romantic Shadows */
+    --shadow-love: 0 10px 40px -10px hsl(345 85% 58% / 0.4);
+    --shadow-heart: 0 5px 25px -5px hsl(345 100% 70% / 0.5);
+    --shadow-soft: 0 4px 20px -4px hsl(345 50% 80% / 0.3);
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 345 30% 88%;
+    --input: 345 40% 92%;
+    --ring: 345 85% 58%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +115,32 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gradient-to-br from-background to-secondary/30 text-foreground min-h-screen;
+  }
+}
+
+@layer utilities {
+  .gradient-love {
+    background: var(--gradient-love);
+  }
+  
+  .gradient-heart {
+    background: var(--gradient-heart);
+  }
+  
+  .gradient-soft {
+    background: var(--gradient-soft);
+  }
+  
+  .shadow-love {
+    box-shadow: var(--shadow-love);
+  }
+  
+  .shadow-heart {
+    box-shadow: var(--shadow-heart);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
   }
 }
